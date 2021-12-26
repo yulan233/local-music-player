@@ -1,0 +1,93 @@
+{
+  "id": "3063002",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "26415658",
+      "name": "循环播放",
+      "font_class": "xunhuanbofang",
+      "unicode": "e6a8",
+      "unicode_decimal": 59048
+    },
+    {
+      "icon_id": "26415674",
+      "name": "音频波段",
+      "font_class": "yinpinboduan",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "26415680",
+      "name": "音乐播放列表",
+      "font_class": "yinlebofangliebiao",
+      "unicode": "e6aa",
+      "unicode_decimal": 59050
+    },
+    {
+      "icon_id": "26415690",
+      "name": "顺序播放",
+      "font_class": "shunxubofang",
+      "unicode": "e6ab",
+      "unicode_decimal": 59051
+    },
+    {
+      "icon_id": "26229048",
+      "name": "耳机，音乐",
+      "font_class": "a-erjiyinle",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "26229057",
+      "name": "获得开始",
+      "font_class": "huodekaishi",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "26229065",
+      "name": "暂停，音乐",
+      "font_class": "a-zantingyinle",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "26229066",
+      "name": "上一曲",
+      "font_class": "shangyiqu",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "26229071",
+      "name": "禁音",
+      "font_class": "jinyin",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "26229074",
+      "name": "下一曲",
+      "font_class": "xiayiqu",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "26229075",
+      "name": "停止播放",
+      "font_class": "tingzhibofang",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "26229081",
+      "name": "音量",
+      "font_class": "yinliang",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    }
+  ]
+}
