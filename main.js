@@ -16,10 +16,13 @@ function createWindow(){
     const mainWindow=new BrowserWindow({
         width:1000,
         height:680,
+        frame: false,          //禁止缩放
+        resizable: false,      //兼容mac与Windows
         titleBarStyle:"hidden",
         webPreferences:{
             contextIsolation: false,
             nodeIntegration: true,
+            webSecurity:false,
             preload:path.join(__dirname,'preload.js')
         }
     })
