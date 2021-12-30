@@ -26,12 +26,17 @@ const routes=[
             //网络资源
             {
                 path:'netResources',
-                component:()=>import('../navBar/netResources')
+                component:()=>import('../navBar/homePage')
             },
             //个人歌单
             {
                 path:'personalSongList',
                 component:()=>import('../navBar/personalSongList')
+            },
+            //歌单页面
+            {
+                path: 'musicList/:id',
+                component:()=>import('../navBar/musicList')
             }
         ]
     }

@@ -1,24 +1,24 @@
 <template>
 <div id="localmusic">
+  <el-input clearable v-model="localUrl" >
+    <el-button slot="append" @click="setLocalUrl">设置</el-button>
+  </el-input>
   <el-table
       class="table"
       :data="tableData"
       height="380"
       border
+      @row-click="play"
       style="width: 100%">
     <el-table-column
-        prop="date"
-        label="日期"
-        width="180">
-    </el-table-column>
-    <el-table-column
         prop="name"
-        label="姓名"
-        width="180">
+        label="名字"
+        width="500">
     </el-table-column>
     <el-table-column
-        prop="address"
-        label="地址">
+        prop="url"
+        label="地址"
+        width="240">
     </el-table-column>
   </el-table>
   <el-pagination
@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import { Event } from '@/util/bus'  // 引入这个事件总线
 export default {
   components:{
   },
@@ -40,42 +41,60 @@ export default {
   },
   data() {
     return {
+      localUrl:'',
       currentPage:1,
       total:1000,
-      tableData: [{
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-08',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-06',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-07',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }]
+      tableData: []
     }
   },
+  created() {
+    this.getLocalUrl()
+  },
   methods: {
+    getLocalUrl(){
+      window.ipcRenderer.send('getLocalUrl')
+      window.ipcRenderer.on('getLocalUrl1',(event, musicUrl) => {
+        this.localUrl=musicUrl
+        this.getList(1)
+      })
+    },
+    setLocalUrl(){
+      window.ipcRenderer.send('setLocalUrl',this.localUrl)
+      this.getList(1)
+    },
     handleCurrentChange(val){
       this.currentPage=val
+      this.getList(val)
+    },
+    play(row){
+      let music={
+        name:row.name,
+        localUrl:row.url
+      }
+      Event.$emit('getMusic', music)
+    },
+    getList(currPage){
+      if(this.localUrl===''){
+        return
+      }
+      window.ipcRenderer.send('readList',this.localUrl)
+      let listObject;
+      window.ipcRenderer.on('listObject',(event, args) => {
+        this.tableData=[]
+        listObject=args
+        this.total=listObject.length/20*10
+        for (let i = (currPage-1)*20; i < currPage*20; i++) {
+          if(i===listObject.length){
+            break
+          }
+          this.tableData.push(
+              {
+                name:listObject[i],
+                url:this.localUrl+'\\'+listObject[i],
+              }
+          )
+        }
+      })
     }
   }
 }

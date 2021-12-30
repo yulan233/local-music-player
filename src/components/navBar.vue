@@ -23,11 +23,17 @@
             <span>网络资源</span>
           </el-menu-item>
         </router-link>
-        <router-link to="/navBar/personalSongList">
-          <el-menu-item index="4">
-            <span>个人歌单</span>
-          </el-menu-item>
-        </router-link>
+<!--        可能之后会加上这个功能-->
+<!--        <router-link to="/navBar/personalSongList">-->
+<!--          <el-menu-item index="4">-->
+<!--            <span>个人歌单</span>-->
+<!--          </el-menu-item>-->
+<!--        </router-link>-->
+<!--        <router-link to="/navBar/musicList/486022716">-->
+<!--          <el-menu-item index="5">-->
+<!--            <span>页面歌单</span>-->
+<!--          </el-menu-item>-->
+<!--        </router-link>-->
       </el-menu>
     </div>
     <div class="left">

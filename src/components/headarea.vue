@@ -4,7 +4,9 @@
       <img src="../assets/logo.jpg" alt="">
     </div>
     <div class="search">
-      <el-input v-model="search" placeholder="Please input" clearable />
+      <el-input v-model="search" placeholder="Please input" clearable >
+        <el-button slot="append" icon="el-icon-search"></el-button>
+      </el-input>
     </div>
     <div class="windowControl">
       <el-button @click="minimizeWindow($event)"><i class="el-icon-minus"></i></el-button>
