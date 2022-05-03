@@ -25,9 +25,9 @@
         </router-link>
 <!--        可能之后会加上这个功能-->
 <!--        <router-link to="/navBar/personalSongList">-->
-<!--          <el-menu-item index="4">-->
-<!--            <span>个人歌单</span>-->
-<!--          </el-menu-item>-->
+          <el-menu-item index="4">
+            <span>个人歌单</span>
+          </el-menu-item>
 <!--        </router-link>-->
 <!--        <router-link to="/navBar/musicList/486022716">-->
 <!--          <el-menu-item index="5">-->
